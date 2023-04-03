@@ -28,7 +28,7 @@ function AddProductForm() {
 
   return (
     <section className="form-container">
-      <form id="product-form">
+      <form id="product_form">
         <ul>
           <li>
             <label>SKU</label>

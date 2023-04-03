@@ -211,7 +211,7 @@ body {
   margin: 10rem 15rem;
 }
 
-#product-form {
+#product_form {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -219,7 +219,7 @@ body {
   width: 350px;
 }
 
-#product-form input {
+#product_form input {
   border: 1px solid var(--cool-gray);
   border-radius: var(--radius-10);
   height: 4.5rem;
@@ -227,19 +227,19 @@ body {
   padding-left: 1rem;
 }
 
-#product-form ul {
+#product_form ul {
   width: 100%;
 }
 
 
-#product-form ul div div {
+#product_form ul div div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px 0;
 }
 
-#product-form ul li {
+#product_form ul li {
   display: flex;
   justify-content: space-between;
   align-items: center;
