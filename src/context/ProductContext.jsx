@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import axios from "axios";
+import production from '../production/base'
 
 export const ProductContext = createContext();
 
@@ -26,13 +26,20 @@ const ProductProvider = ({ children }) => {
     try {
       const fetchProducts = async () => {
         setLoading(true);
-        const res = await axios.get(
-          `https://hostscandiwebjuniortest.000webhostapp.com/backendtest/api/products/read.php`
-        );
-        console.log(res.data);
-        setMessage(res.data.message);
-        res.data.length > 0 ? setLoading(false) : setLoading(true);
-        setProducts(res.data);
+        
+      await fetch(
+        `${production}/read.php`
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          setProducts(data);
+          console.log(data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
       };
       fetchProducts();
     } catch (error) {
@@ -48,15 +55,13 @@ const ProductProvider = ({ children }) => {
     try {
       e.preventDefault();
 
-       // Check if required fields are not empty
-       if (
+      // Check if required fields are not empty
+      if (
         sku.trim() === "" ||
         name.trim() === "" ||
         price === "" ||
         type.trim() === "Select Type" ||
-        attribute === [] ||
-        size === 0 
-       
+        attribute === [] 
       ) {
         return setValidate(true);
       } else {
@@ -70,17 +75,29 @@ const ProductProvider = ({ children }) => {
         setSkuMessage(false);
       }
 
-      const res = await axios.post(
-        `https://hostscandiwebjuniortest.000webhostapp.com/backendtest/api/products/create.php`,
+      await fetch(
+        `${production}/create.php`,
         {
-          sku,
-          name,
-          price,
-          type,
-          attribute: size || weight || [height, width, length].join(""),
+          method: "POST",
+          body: JSON.stringify({
+            sku,
+            name,
+            price,
+            type,
+            attribute: size || weight || [height, width, length].join(""),
+          }),
         }
-      );
-
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          data: sku, name, price, type, attribute;
+          console.log("Created:", sku, name, price, type, attribute);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
 
       //reset all input
       setSku("");
@@ -89,7 +106,7 @@ const ProductProvider = ({ children }) => {
       setType("Select Type");
       setAttribute("");
 
-      res.data && window.location.replace("/");
+      window.location.replace("/");
     } catch (err) {
       console.log(err);
     }
@@ -97,13 +114,27 @@ const ProductProvider = ({ children }) => {
 
   //Mass Delete
   const handleDelete = async (id) => {
-    try {
-      await axios.delete(
-        `https://hostscandiwebjuniortest.000webhostapp.com/backendtest/api/products/delete.php`,
+    try {   
+       fetch(
+        `${production}/delete.php`,
         {
-          data: { ids: id },
+          method: "POST",
+          body: JSON.stringify({
+            ids: [id],
+          }),
         }
-      );
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          data: [id];
+          console.log("Deleted:", [id].join(""));
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+
       data && window.location.replace("/");
     } catch (error) {
       console.log(error);
