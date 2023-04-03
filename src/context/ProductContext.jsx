@@ -99,7 +99,7 @@ const ProductProvider = ({ children }) => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `http://hostscandiwebjuniortest.000webhostapp.com/backendtest/api/products/delete.php`,
+        `https://hostscandiwebjuniortest.000webhostapp.com/backendtest/api/products/delete.php`,
         {
           data: { ids: id },
         }
