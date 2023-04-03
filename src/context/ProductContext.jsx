@@ -49,26 +49,26 @@ const ProductProvider = ({ children }) => {
       e.preventDefault();
 
        // Check if required fields are not empty
-      //  if (
-      //   sku.trim() === "" ||
-      //   name.trim() === "" ||
-      //   price === "" ||
-      //   type.trim() === "Select Type" ||
-      //   attribute === [] ||
-      //   size === 0 
+       if (
+        sku.trim() === "" ||
+        name.trim() === "" ||
+        price === "" ||
+        type.trim() === "Select Type" ||
+        attribute === [] ||
+        size === 0 
        
-      // ) {
-      //   return setValidate(true);
-      // } else {
-      //   setValidate(false);
-      // }
+      ) {
+        return setValidate(true);
+      } else {
+        setValidate(false);
+      }
 
-      //check if sku already exists
-      // if (productSku) {
-      //   return setSkuMessage(true);
-      // } else {
-      //   setSkuMessage(false);
-      // }
+      // check if sku already exists
+      if (productSku) {
+        return setSkuMessage(true);
+      } else {
+        setSkuMessage(false);
+      }
 
       const res = await axios.post(
         `https://hostscandiwebjuniortest.000webhostapp.com/backendtest/api/products/create.php`,
@@ -89,7 +89,7 @@ const ProductProvider = ({ children }) => {
       setType("Select Type");
       setAttribute("");
 
-      // res.data && window.location.replace("/");
+      res.data && window.location.replace("/");
     } catch (err) {
       console.log(err);
     }
