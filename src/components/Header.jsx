@@ -35,10 +35,10 @@ function Header() {
               {url === "/addproduct" ? (
                 <>
                   <button className="btn" onClick={create}>
-                    SAVE
+                    Save
                   </button>{" "}
                   <Link className="btn secondary-btn" to="/">
-                    CANCEL
+                    Cancel
                   </Link>
                 </>
               ) : null}
