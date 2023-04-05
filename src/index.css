@@ -318,6 +318,7 @@ footer h1 {
 
 .test {
   visibility: hidden;
+  opacity: 0;
 }
 
 @keyframes spinner-d3wgkg {

@@ -136,7 +136,7 @@ const ProductProvider = ({ children }) => {
           console.error(error);
         });
 
-      window.location.replace("/");
+      // window.location.replace("/");
     } catch (error) {
       console.log(error);
     }
@@ -176,7 +176,8 @@ const ProductProvider = ({ children }) => {
         message,
         skuMessage,
         validate,
-        check
+        check,
+        setCheck
       }}
     >
       {children}
