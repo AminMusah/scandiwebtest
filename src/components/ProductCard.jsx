@@ -2,8 +2,7 @@ import { useContext, useState } from "react";
 import { ProductContext } from "../context/ProductContext";
 
 function ProductCard() {
-  const { products, setId, check} = useContext(ProductContext);
-  console.log(check);
+  const { products, setId} = useContext(ProductContext);
 
   return (
     <>
@@ -12,7 +11,6 @@ function ProductCard() {
           <div className="top-section">
             <input
               type="checkbox"
-              className={check? "delete-checkbox" : ""}
               onClick={() => {
                 setId((prevState) => [...prevState, product.id]);
               }}

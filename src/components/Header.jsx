@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 
 function Header() {
-  const { handleDelete, id, create,hello } = useContext(ProductContext);
+  const { handleDelete, id, create, check } = useContext(ProductContext);
   
   //get page url
   const location = useLocation();
@@ -22,7 +22,7 @@ function Header() {
                 ADD
               </Link>{" "}
               <button
-                className="btn secondary-btn delete-checkbox"
+                className={check ? "btn secondary-btn delete-checkbox": "btn secondary-btn"}
                 onClick={() => {
                   handleDelete(id);
                 }}
