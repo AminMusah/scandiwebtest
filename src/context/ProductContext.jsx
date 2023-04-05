@@ -35,7 +35,7 @@ const ProductProvider = ({ children }) => {
         })
         .then(function (data) {
           setProducts(data);
-          console.log(data);
+          // console.log(data);
         })
         .catch(function (error) {
           console.error(error);
@@ -93,7 +93,6 @@ const ProductProvider = ({ children }) => {
         })
         .then(function (data) {
           data: sku, name, price, type, attribute;
-          console.log("Created:", sku, name, price, type, attribute);
         })
         .catch(function (error) {
           console.error(error);
@@ -120,7 +119,7 @@ const ProductProvider = ({ children }) => {
         {
           method: "POST",
           body: JSON.stringify({
-            ids: [id],
+            ids: [...id,id],
           }),
         }
       )
@@ -128,14 +127,13 @@ const ProductProvider = ({ children }) => {
           return response.json();
         })
         .then(function (data) {
-          data: [id];
-          console.log("Deleted:", [id].join(""));
+          console.log("Deleted:", [id]);
         })
         .catch(function (error) {
           console.error(error);
         });
 
-      data && window.location.replace("/");
+      window.location.replace("/");
     } catch (error) {
       console.log(error);
     }

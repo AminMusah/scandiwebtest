@@ -156,8 +156,8 @@ body {
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 10rem 0 0 0;
+  gap: 55px;
+  padding: 12rem 0 0 0;
   width: 80%;
   margin: 5px auto 90px;
 }
@@ -202,9 +202,8 @@ body {
 
 .middle-section div {
   display: flex;
-
   align-items: center;
-  margin: 10px;
+  margin: 5px;
 }
 
 .form-container {

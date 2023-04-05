@@ -25,11 +25,11 @@ function ProductCard() {
               <span> {product.name}</span>
             </div>
             <div>
-              <span>{product.price + " $"}</span>
+              <span>{Number(product.price).toFixed(2) + " $"}</span>
             </div>
             <div>
               {product.type === "Book"
-                ? "Weight: " + product.attribute + " KG"
+                ? "Weight: " + product.attribute + "KG"
                 : product.type === "DVD"
                 ? "Size: " + product.attribute + " MB"
                 : product.type === "Furniture"
