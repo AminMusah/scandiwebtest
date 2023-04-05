@@ -136,7 +136,7 @@ const ProductProvider = ({ children }) => {
           console.error(error);
         });
 
-        setCheck(true)
+        setCheck(!check)
       window.location.replace("/");
     } catch (error) {
       console.log(error);
