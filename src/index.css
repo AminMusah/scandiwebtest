@@ -316,6 +316,10 @@ footer h1 {
   animation: spinner-d3wgkg 1s infinite linear;
 }
 
+.test {
+  visibility: hidden;
+}
+
 @keyframes spinner-d3wgkg {
   to {
     transform: rotate(1turn);
