@@ -11,6 +11,7 @@ function ProductCard() {
           <div className="top-section">
             <input
               type="checkbox"
+              className="delete-checkbox"
               onClick={() => {
                 setId((prevState) => [...prevState, product.id]);
               }}
@@ -27,9 +28,6 @@ function ProductCard() {
               <span>{Number(product.price).toFixed(2) + " $"}</span>
             </div>
             <div>
-              <div style={{ visibility: "hidden", fontSize: '0.02px' }}>NameTest000</div>
-              <div style={{ visibility: "hidden", fontSize: '0.02px' }}>NameTest001</div>
-              <div style={{ visibility: "hidden", fontSize: '0.02px' }}>NameTest002</div>
               {product.type === "Book"
                 ? "Weight: " + product.attribute + "KG"
                 : product.type === "DVD"
