@@ -3,6 +3,8 @@ import { ProductContext } from "../context/ProductContext";
 
 function ProductCard() {
   const { products, setId } = useContext(ProductContext);
+  const [check, setCheck] = useState(false);
+  console.log(check);
 
   return (
     <>
@@ -11,9 +13,10 @@ function ProductCard() {
           <div className="top-section">
             <input
               type="checkbox"
-              className="delete-checkbox"
+              className={check? "" : ""}
               onClick={() => {
                 setId((prevState) => [...prevState, product.id]);
+                setCheck(!check)
               }}
             />
           </div>
