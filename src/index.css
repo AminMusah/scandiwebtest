@@ -189,7 +189,11 @@ body {
 }
 
 .delete-checkbox {
-  /* width: 40px; */
+  width: 40px;
+}
+
+.delete-button {
+width: 215px;
 }
 
 .middle-section {
