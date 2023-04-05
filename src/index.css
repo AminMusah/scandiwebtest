@@ -188,14 +188,6 @@ body {
   padding-left: 5px;
 }
 
-.delete-checkbox {
-  margin-left: 0px;
-}
-
-/* .delete-button {
-  width: 215px;
-} */
-
 .middle-section {
   display: flex;
   align-items: center;
