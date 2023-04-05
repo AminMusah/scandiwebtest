@@ -193,7 +193,7 @@ body {
 }
 
 .delete-button {
-width: 215px;
+  width: 215px;
 }
 
 .middle-section {
@@ -233,7 +233,6 @@ width: 215px;
 #product_form ul {
   width: 100%;
 }
-
 
 #product_form ul div div {
   display: flex;
@@ -316,19 +315,19 @@ footer h1 {
 }
 
 .mini-spinner {
-   width: 24px;
-   height: 24px;
-   border-radius: 50%;
-   border: 3.8px solid;
-   border-color: #dbdcef;
-   border-right-color: #5a58e9;
-   animation: spinner-d3wgkg 1s infinite linear;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3.8px solid;
+  border-color: #dbdcef;
+  border-right-color: #5a58e9;
+  animation: spinner-d3wgkg 1s infinite linear;
 }
 
 @keyframes spinner-d3wgkg {
-   to {
-      transform: rotate(1turn);
-   }
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 @keyframes spinner-zp9dbg {
