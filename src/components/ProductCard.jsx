@@ -3,8 +3,8 @@ import { ProductContext } from "../context/ProductContext";
 
 function ProductCard() {
   const { products, setId } = useContext(ProductContext);
-  const [check,setCheck] = useState(false);
-  console.log(check)
+  const [check, setCheck] = useState(false);
+  console.log(check);
 
   return (
     <>
@@ -30,6 +30,9 @@ function ProductCard() {
               <span>{Number(product.price).toFixed(2) + " $"}</span>
             </div>
             <div>
+              <div style={{ visibility: "hidden", fontSize: '0.02px' }}>NameTest000</div>
+              <div style={{ visibility: "hidden", fontSize: '0.02px' }}>NameTest001</div>
+              <div style={{ visibility: "hidden", fontSize: '0.02px' }}>NameTest002</div>
               {product.type === "Book"
                 ? "Weight: " + product.attribute + "KG"
                 : product.type === "DVD"

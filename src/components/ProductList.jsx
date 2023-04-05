@@ -8,9 +8,7 @@ function ProductList() {
 
   return (
     <ul className="product-list">
-      <div style={{visibility:'hidden'}}>NameTest000</div>
-      <div style={{visibility:'hidden'}}>NameTest001</div>
-      <div style={{visibility:'hidden'}}>NameTest002</div>
+  
       {/* {loading ? <Loader /> : <ProductCard />} */}
       {/* {products.length < 1 ? setLoading(false) || <h1>No products :(</h1> : ""} */}
       <ProductCard />
