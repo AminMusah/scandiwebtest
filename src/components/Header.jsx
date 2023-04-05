@@ -1,11 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 
 function Header() {
   const { handleDelete, id, create,hello } = useContext(ProductContext);
-  const [check, setCheck] = useState(false);
-  console.log(check)
   
   //get page url
   const location = useLocation();
@@ -24,10 +22,9 @@ function Header() {
                 ADD
               </Link>{" "}
               <button
-                className={check? "btn secondary-btn" : "btn secondary-btn delete-checkbox"}
+                className="btn secondary-btn delete-checkbox"
                 onClick={() => {
                   handleDelete(id);
-                  setCheck(!check);
                 }}
               >
                 MASS DELETE
