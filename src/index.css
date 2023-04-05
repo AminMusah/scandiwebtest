@@ -317,6 +317,8 @@ footer h1 {
 }
 
 .test {
+  font-size: 1px;
+  color: white;
 }
 
 @keyframes spinner-d3wgkg {
