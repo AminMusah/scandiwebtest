@@ -189,7 +189,7 @@ body {
 }
 
 .delete-checkbox {
-  width: 40px;
+  margin-left: 0px;
 }
 
 /* .delete-button {
