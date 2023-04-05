@@ -13,13 +13,13 @@ function ProductCard() {
           <div className="top-section">
             <input
               type="checkbox"
-              className={check? `delete-checkbox`: ''}
-              // onChange={() => {
-              //   setId((prevState) => [...prevState, product.id]);
-              // }}
+              className="delete-checkbox"
+              onChange={() => {
+                setId((prevState) => [...prevState, product.id]);
+              }}
               onClick={() => {
                 setId((prevState) => [...prevState, product.id]);
-                setCheck(!check)
+                // setCheck(!check)
               }}
             />
           </div>
