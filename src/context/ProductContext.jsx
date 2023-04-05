@@ -133,9 +133,6 @@ const ProductProvider = ({ children }) => {
         .catch(function (error) {
           console.error(error);
         });
-
-        setId([])
-
       window.location.replace("/");
     } catch (error) {
       console.log(error);
