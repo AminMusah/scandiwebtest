@@ -20,6 +20,8 @@ const ProductProvider = ({ children }) => {
   const [skuMessage, setSkuMessage] = useState(false);
   const [validate, setValidate] = useState(false);
   const [id, setId] = useState([]);
+  const [check, setCheck] = useState(false);
+
 
   //Get All products
   useEffect(() => {
@@ -133,6 +135,8 @@ const ProductProvider = ({ children }) => {
         .catch(function (error) {
           console.error(error);
         });
+
+        setCheck(true)
       window.location.replace("/");
     } catch (error) {
       console.log(error);
@@ -173,6 +177,7 @@ const ProductProvider = ({ children }) => {
         message,
         skuMessage,
         validate,
+        check
       }}
     >
       {children}
