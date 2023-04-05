@@ -13,7 +13,7 @@ function ProductCard() {
           <div className="top-section">
             <input
               type="checkbox"
-              className={check ? `delete-checkbox` : ``}
+              // className={check ? `delete-checkbox` : ``}
               onClick={() => {
                 setId((prevState) => [...prevState, product.id]);
                 setCheck(!check)
