@@ -157,7 +157,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 55px;
-  padding: 12rem 0 0 0;
+  padding: 3rem 0 0 0;
   width: 80%;
   margin: 5px auto 90px;
 }
@@ -189,7 +189,7 @@ body {
 }
 
 .delete-checkbox {
-  width: 40px;
+  /* width: 40px; */
 }
 
 .middle-section {

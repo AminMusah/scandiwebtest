@@ -62,6 +62,7 @@ const ProductProvider = ({ children }) => {
         price === "" ||
         type.trim() === "Select Type" ||
         attribute === [] 
+       
       ) {
         return setValidate(true);
       } else {
