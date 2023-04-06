@@ -306,25 +306,9 @@ footer h1 {
   top: 40%;
 }
 
-.mini-spinner {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 3.8px solid;
-  border-color: #dbdcef;
-  border-right-color: #5a58e9;
-  animation: spinner-d3wgkg 1s infinite linear;
-}
-
 .test {
   font-size: 1px;
   color: white;
-}
-
-@keyframes spinner-d3wgkg {
-  to {
-    transform: rotate(1turn);
-  }
 }
 
 @keyframes spinner-zp9dbg {
