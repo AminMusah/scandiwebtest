@@ -141,7 +141,7 @@ const ProductProvider = ({ children }) => {
 
       setTimeout(()=>{
         setCheck(!check)
-      },2000)
+      },4000)
     } catch (error) {
       console.log(error);
     }
