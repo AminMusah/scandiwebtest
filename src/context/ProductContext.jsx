@@ -137,11 +137,11 @@ const ProductProvider = ({ children }) => {
         });
 
 
-      window.location.replace("/");
+      // window.location.replace("/");
 
       setTimeout(()=>{
         setCheck(!check)
-      },1000)
+      },2000)
     } catch (error) {
       console.log(error);
     }
