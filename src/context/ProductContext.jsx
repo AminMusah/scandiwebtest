@@ -136,9 +136,12 @@ const ProductProvider = ({ children }) => {
           console.error(error);
         });
 
-        setCheck(true)
 
-      // window.location.replace("/");
+      window.location.replace("/");
+
+      setTimeout(()=>{
+        setCheck(true)
+      },1000)
     } catch (error) {
       console.log(error);
     }
