@@ -20,7 +20,7 @@ const ProductProvider = ({ children }) => {
   const [skuMessage, setSkuMessage] = useState(false);
   const [validate, setValidate] = useState(false);
   const [id, setId] = useState([]);
-  const [check, setCheck] = useState(true);
+  const [check, setCheck] = useState(false);
 
 
   //Get All products
@@ -140,8 +140,8 @@ const ProductProvider = ({ children }) => {
       window.location.replace("/");
 
       setTimeout(()=>{
-        setCheck(true)
-      },3000)
+        setCheck(!check)
+      },1000)
     } catch (error) {
       console.log(error);
     }
