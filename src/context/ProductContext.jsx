@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import production from '../production/base'
+import production from "../production/base";
 
 export const ProductContext = createContext();
 
@@ -22,26 +22,23 @@ const ProductProvider = ({ children }) => {
   const [id, setId] = useState([]);
   const [check, setCheck] = useState(false);
 
-
   //Get All products
   useEffect(() => {
     try {
       const fetchProducts = async () => {
         setLoading(true);
-        
-      await fetch(
-        `${production}/read.php`
-      )
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          setProducts(data);
-          // console.log(data);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
+
+        await fetch(`${production}/read.php`)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            setProducts(data);
+            // console.log(data);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
       };
       fetchProducts();
     } catch (error) {
@@ -63,8 +60,7 @@ const ProductProvider = ({ children }) => {
         name.trim() === "" ||
         price === "" ||
         type.trim() === "Select Type" ||
-        attribute === [] 
-       
+        attribute === []
       ) {
         return setValidate(true);
       } else {
@@ -78,19 +74,16 @@ const ProductProvider = ({ children }) => {
         setSkuMessage(false);
       }
 
-      await fetch(
-        `${production}/create.php`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            sku,
-            name,
-            price,
-            type,
-            attribute: size || weight || [height, width, length].join(""),
-          }),
-        }
-      )
+      await fetch(`${production}/create.php`, {
+        method: "POST",
+        body: JSON.stringify({
+          sku,
+          name,
+          price,
+          type,
+          attribute: size || weight || [height, width, length].join(""),
+        }),
+      })
         .then(function (response) {
           return response.json();
         })
@@ -116,16 +109,13 @@ const ProductProvider = ({ children }) => {
 
   //Mass Delete
   const handleDelete = async (id) => {
-    try {   
-       fetch(
-        `${production}/delete.php`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            ids: [...id,id],
-          }),
-        }
-      )
+    try {
+      fetch(`${production}/delete.php`, {
+        method: "POST",
+        body: JSON.stringify({
+          ids: [...id, id],
+        }),
+      })
         .then(function (response) {
           return response.json();
         })
@@ -136,14 +126,18 @@ const ProductProvider = ({ children }) => {
           console.error(error);
         });
 
+      await waitForInvisible(".delete-checkbox");
 
-      // window.location.replace("/");
-
-      setTimeout(()=>{
-        setCheck(!check)
-      },4000)
+      window.location.replace("/");
     } catch (error) {
       console.log(error);
+    }
+
+    async function waitForInvisible(selector) {
+      const isVisible = await page.isVisible(selector);
+      if (isVisible) {
+        await page.waitForSelector(selector, { state: "hidden" });
+      }
     }
   };
 
@@ -182,7 +176,7 @@ const ProductProvider = ({ children }) => {
         skuMessage,
         validate,
         check,
-        setCheck
+        setCheck,
       }}
     >
       {children}
