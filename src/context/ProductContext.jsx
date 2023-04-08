@@ -136,7 +136,7 @@ const ProductProvider = ({ children }) => {
         console.log(checkboxes);
         setTimeout(() => {
           checkboxes.classList.add("delete-checkbox");
-        }, 1000);
+        }, 6000);
 
 
     } catch (error) {
