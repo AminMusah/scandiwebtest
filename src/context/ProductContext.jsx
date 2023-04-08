@@ -134,9 +134,9 @@ const ProductProvider = ({ children }) => {
       const checkboxes = document.querySelector(".delete-checkbox");
 
         console.log(checkboxes);
-        setTimeout(() => {
+        setInterval(() => {
           checkboxes.classList.remove("delete-checkbox");
-        }, 5000);
+        }, 1000);
 
 
     } catch (error) {
