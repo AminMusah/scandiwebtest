@@ -109,6 +109,7 @@ const ProductProvider = ({ children }) => {
 
   //Mass Delete
   const handleDelete = async (id) => {
+    setCheck(false);
     try {
       fetch(`${production}/delete.php`, {
         method: "POST",
@@ -127,7 +128,17 @@ const ProductProvider = ({ children }) => {
         });
 
       // window.location.replace("/");
-      console.log(check)
+
+      // setCheck(true);
+
+      const checkboxes = document.querySelector(".delete-checkbox");
+
+        console.log(checkboxes);
+        setTimeout(() => {
+          checkboxes.classList.remove("delete-checkbox");
+        }, 3000);
+
+     
     } catch (error) {
       console.log(error);
     }
