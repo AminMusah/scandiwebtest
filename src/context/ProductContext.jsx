@@ -134,7 +134,7 @@ const ProductProvider = ({ children }) => {
       const checkboxes = document.querySelector(".secondary-btn");
 
         console.log(checkboxes);
-        setInterval(() => {
+        setTimeout(() => {
           checkboxes.classList.add("delete-checkbox");
         }, 1000);
 
