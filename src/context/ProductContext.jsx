@@ -131,11 +131,11 @@ const ProductProvider = ({ children }) => {
       // setCheck(true);
       // window.location.replace("/");
 
-      const checkboxes = document.querySelector(".delete-checkbox");
+      const checkboxes = document.querySelector(".secondary-btn");
 
         console.log(checkboxes);
         setInterval(() => {
-          checkboxes.classList.remove("delete-checkbox");
+          checkboxes.classList.add("delete-checkbox");
         }, 1000);
 
 
