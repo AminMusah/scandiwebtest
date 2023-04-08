@@ -24,9 +24,12 @@ function Header() {
                 ADD
               </Link>{" "}
               <button
-                className= "btn secondary-btn delete-checkbox"
+                className={check ? "btn secondary-btn " : "btn secondary-btn delete-checkbox"}
                 onClick={() => {
                   handleDelete(id);
+                  setTimeout(() => {
+                    setCheck(true);
+                  }, 3000);
                 }}
               >
                 MASS DELETE

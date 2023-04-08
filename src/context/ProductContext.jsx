@@ -127,15 +127,7 @@ const ProductProvider = ({ children }) => {
         });
 
       // window.location.replace("/");
-
-      setInterval(() => {
-        setCheck(!check);
-      }, 100);
-
-      if (check === false) {
-        const deleteCheckbox = document.querySelector(".delete-checkbox");
-        deleteCheckbox.classList.remove(".delete-checkbox");
-      }
+      console.log(check)
     } catch (error) {
       console.log(error);
     }
