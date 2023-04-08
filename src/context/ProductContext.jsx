@@ -126,18 +126,16 @@ const ProductProvider = ({ children }) => {
           console.error(error);
         });
 
-      await waitForInvisible(".delete-checkbox");
 
-      window.location.replace("/");
+      // window.location.replace("/");
+
+      
+      setTimeout(() => {
+      setCheck(!check)
+      
+      }, 5000);
     } catch (error) {
       console.log(error);
-    }
-
-    async function waitForInvisible(selector) {
-      const isVisible = await page.isVisible(selector);
-      if (isVisible) {
-        await page.waitForSelector(selector, { state: "hidden" });
-      }
     }
   };
 
