@@ -127,18 +127,18 @@ const ProductProvider = ({ children }) => {
           console.error(error);
         });
 
-      // window.location.replace("/");
 
       // setCheck(true);
+      // window.location.replace("/");
 
       const checkboxes = document.querySelector(".delete-checkbox");
 
         console.log(checkboxes);
         setTimeout(() => {
           checkboxes.classList.remove("delete-checkbox");
-        }, 3000);
+        }, 4148);
 
-     
+
     } catch (error) {
       console.log(error);
     }
