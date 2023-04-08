@@ -110,11 +110,6 @@ const ProductProvider = ({ children }) => {
   //Mass Delete
   const handleDelete = async (id) => {
     try {
-      const deleteCheckboxes = document.querySelectorAll(".delete-checkbox");
-      deleteCheckboxes.forEach((checkbox) => {
-        checkbox.checked = true;
-      });
-
       fetch(`${production}/delete.php`, {
         method: "POST",
         body: JSON.stringify({
@@ -133,20 +128,14 @@ const ProductProvider = ({ children }) => {
 
       // window.location.replace("/");
 
-      // Wait for all "delete-checkbox" checkboxes to become invisible after deletion
-      const waitForInvisibleCheckboxes = () => {
-        const visibleCheckboxes = document.querySelectorAll(
-          ".delete-checkbox:not(:checked)"
-        );
-        if (visibleCheckboxes.length === 0) {
-          // All checkboxes are now invisible
-          setCheck(!check);
-          return;
-        }
-        // Wait for a short amount of time and check again
-        setTimeout(waitForInvisibleCheckboxes, 100);
-      };
-      waitForInvisibleCheckboxes();
+      setInterval(() => {
+        setCheck(!check);
+      }, 100);
+
+      if (check === false) {
+        const deleteCheckbox = document.querySelector(".delete-checkbox");
+        deleteCheckbox.classList.remove(".delete-checkbox");
+      }
     } catch (error) {
       console.log(error);
     }

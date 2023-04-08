@@ -24,7 +24,7 @@ function Header() {
                 ADD
               </Link>{" "}
               <button
-                className={check ? "btn secondary-btn " : "btn secondary-btn delete-checkbox"}
+                className= "btn secondary-btn delete-checkbox"
                 onClick={() => {
                   handleDelete(id);
                 }}
