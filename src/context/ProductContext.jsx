@@ -110,10 +110,10 @@ const ProductProvider = ({ children }) => {
   const checkboxes = document.querySelector(".delete-checkbox");
 
   //Mass Delete
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
 
     try {
-      fetch(`${production}/delete.php`, {
+      await fetch(`${production}/delete.php`, {
         method: "POST",
         body: JSON.stringify({
           ids: [...id, id],
@@ -132,12 +132,15 @@ const ProductProvider = ({ children }) => {
 
       // setCheck(true);
       // window.location.replace("/");
-      checkboxes.classList.remove("delete-checkbox");
+      setTimeout(()=>{
+        checkboxes.classList.remove("delete-checkbox");
+        console.log(checkboxes)
+      },3000)
 
       setTimeout(()=>{
         checkboxes.classList.add("delete-checkbox");
         console.log(checkboxes)
-      },5000)
+      },6000)
 
       console.log(checkboxes)
 
