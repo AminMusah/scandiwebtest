@@ -107,9 +107,11 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  const checkboxes = document.querySelector(".delete-checkbox");
+
   //Mass Delete
-  const handleDelete = async (id) => {
-    setCheck(false);
+  const handleDelete = (id) => {
+
     try {
       fetch(`${production}/delete.php`, {
         method: "POST",
@@ -130,14 +132,14 @@ const ProductProvider = ({ children }) => {
 
       // setCheck(true);
       // window.location.replace("/");
+      checkboxes.classList.remove("delete-checkbox");
 
-      const checkboxes = document.querySelector(".secondary-btn");
+      setTimeout(()=>{
+        checkboxes.classList.add("delete-checkbox");
+        console.log(checkboxes)
+      },5000)
 
-        console.log(checkboxes);
-        setTimeout(() => {
-          checkboxes.classList.add("delete-checkbox");
-        }, 6000);
-
+      console.log(checkboxes)
 
     } catch (error) {
       console.log(error);
