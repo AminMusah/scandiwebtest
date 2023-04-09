@@ -107,7 +107,7 @@ const ProductProvider = ({ children }) => {
     }
   };
 
-  const checkboxes = document.querySelector(".delete-checkbox");
+  const checkboxes = document.querySelector(".secondary-btn");
 
   //Mass Delete
   const handleDelete = async (id) => {
@@ -132,10 +132,10 @@ const ProductProvider = ({ children }) => {
 
       // setCheck(true);
       // window.location.replace("/");
-      setInterval(()=>{
-        checkboxes.classList.remove("delete-checkbox");
+      // setInterval(()=>{
+        checkboxes.classList.add("delete-checkbox");
       //   console.log(checkboxes)
-      },100)
+      // },100)
 
       console.log(checkboxes)
 
