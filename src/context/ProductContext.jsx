@@ -111,6 +111,7 @@ const ProductProvider = ({ children }) => {
 
   //Mass Delete
   const handleDelete = async (id) => {
+    checkboxes.classList.add("delete-checkbox");
 
     try {
       await fetch(`${production}/delete.php`, {
@@ -133,7 +134,6 @@ const ProductProvider = ({ children }) => {
       // setCheck(true);
       // window.location.replace("/");
       // setInterval(()=>{
-        checkboxes.classList.add("delete-checkbox");
       //   console.log(checkboxes)
       // },100)
 
