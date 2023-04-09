@@ -20,7 +20,6 @@ const ProductProvider = ({ children }) => {
   const [skuMessage, setSkuMessage] = useState(false);
   const [validate, setValidate] = useState(false);
   const [id, setId] = useState([]);
-  const [check, setCheck] = useState(false);
 
   //Get All products
   useEffect(() => {
@@ -88,7 +87,7 @@ const ProductProvider = ({ children }) => {
           return response.json();
         })
         .then(function (data) {
-          data: sku, name, price, type, attribute;
+          console.log( sku, name, price, type, attribute);
         })
         .catch(function (error) {
           console.error(error);
@@ -108,13 +107,14 @@ const ProductProvider = ({ children }) => {
   };
 
   const checkboxes = document.querySelector(".secondary-btn");
-  setTimeout(()=>{
+
+  //make .delete-checkbox invisible after 3s
+  setTimeout(() => {
     checkboxes.classList.remove("delete-checkbox");
-  }, 3000)
+  }, 3000);
 
   //Mass Delete
   const handleDelete = async (id) => {
-
     try {
       await fetch(`${production}/delete.php`, {
         method: "POST",
@@ -126,21 +126,13 @@ const ProductProvider = ({ children }) => {
           return response.json();
         })
         .then(function (data) {
-          console.log("Deleted:", [id]);
+          console.log([id]);
         })
         .catch(function (error) {
           console.error(error);
         });
 
-
-      // setCheck(true);
-      // window.location.replace("/");
-      // setInterval(()=>{
-      //   console.log(checkboxes)
-      // },100)
-
-      console.log(checkboxes)
-
+      window.location.replace("/");
     } catch (error) {
       console.log(error);
     }
@@ -180,8 +172,6 @@ const ProductProvider = ({ children }) => {
         message,
         skuMessage,
         validate,
-        check,
-        setCheck,
       }}
     >
       {children}

@@ -3,9 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 
 function Header() {
-  const { handleDelete, id, create, check, setId, setCheck } = useContext(ProductContext);
-  console.log(id)
-  console.log(check)
+  const { handleDelete, id, create } = useContext(ProductContext);
   
   //get page url
   const location = useLocation();
