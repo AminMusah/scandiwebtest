@@ -108,10 +108,12 @@ const ProductProvider = ({ children }) => {
   };
 
   const checkboxes = document.querySelector(".secondary-btn");
+  setTimeout(()=>{
+    checkboxes.classList.remove("delete-checkbox");
+  }, 3000)
 
   //Mass Delete
   const handleDelete = async (id) => {
-    checkboxes.classList.add("delete-checkbox");
 
     try {
       await fetch(`${production}/delete.php`, {
