@@ -132,15 +132,10 @@ const ProductProvider = ({ children }) => {
 
       // setCheck(true);
       // window.location.replace("/");
-      setTimeout(()=>{
+      // setTimeout(()=>{
         checkboxes.classList.remove("delete-checkbox");
-        console.log(checkboxes)
-      },3000)
-
-      setTimeout(()=>{
-        checkboxes.classList.add("delete-checkbox");
-        console.log(checkboxes)
-      },6000)
+      //   console.log(checkboxes)
+      // },3000)
 
       console.log(checkboxes)
 
