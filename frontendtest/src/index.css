@@ -179,6 +179,7 @@ body {
   padding: 20px;
   border: 1px solid var(--light-gray);
   border-radius: var(--radius-10);
+  font-size: 14px;
 }
 
 .top-section {
@@ -187,14 +188,6 @@ body {
   margin: 0 0 10px 0;
   padding-left: 5px;
 }
-
-.delete-checkbox {
-  margin-left: 0px;
-}
-
-/* .delete-button {
-  width: 215px;
-} */
 
 .middle-section {
   display: flex;
@@ -314,20 +307,9 @@ footer h1 {
   top: 40%;
 }
 
-.mini-spinner {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 3.8px solid;
-  border-color: #dbdcef;
-  border-right-color: #5a58e9;
-  animation: spinner-d3wgkg 1s infinite linear;
-}
-
-@keyframes spinner-d3wgkg {
-  to {
-    transform: rotate(1turn);
-  }
+.test {
+  font-size: 1px;
+  color: white;
 }
 
 @keyframes spinner-zp9dbg {

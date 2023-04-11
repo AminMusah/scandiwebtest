@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 
 function AddProductForm() {
@@ -21,14 +21,16 @@ function AddProductForm() {
     setWidth,
     length,
     setLength,
-    message,
     validate,
-    skuMessage
+    skuMessage,
+    handleSubmit
   } = useContext(ProductContext);
+
+  
 
   return (
     <section className="form-container">
-      <form id="product_form">
+      <form id="product_form" onSubmit={handleSubmit}>
         <ul>
           <li>
             <label>SKU</label>

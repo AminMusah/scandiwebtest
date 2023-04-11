@@ -26,6 +26,7 @@ function ProductCard() {
             <div>
               <span>{Number(product.price).toFixed(2) + " $"}</span>
             </div>
+            
             <div>
               {product.type === "Book"
                 ? "Weight: " + product.attribute + "KG"
