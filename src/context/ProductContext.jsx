@@ -20,6 +20,7 @@ const ProductProvider = ({ children }) => {
   const [skuMessage, setSkuMessage] = useState(false);
   const [validate, setValidate] = useState(false);
   const [id, setId] = useState([]);
+  const [submitting, setSubmitting] = useState(false);
 
   //Get All products
   useEffect(() => {
@@ -105,6 +106,14 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    await create();
+    setSubmitting(false);
+  }
+
   const checkboxes = document.querySelector(".secondary-btn");
 
   //make .delete-checkbox invisible after 3s
@@ -171,6 +180,8 @@ const ProductProvider = ({ children }) => {
         message,
         skuMessage,
         validate,
+        handleSubmit,
+        submitting
       }}
     >
       {children}

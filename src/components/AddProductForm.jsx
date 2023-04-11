@@ -22,12 +22,13 @@ function AddProductForm() {
     length,
     setLength,
     validate,
-    skuMessage
+    skuMessage,
+    handleSubmit
   } = useContext(ProductContext);
 
   return (
     <section className="form-container">
-      <form id="product_form">
+      <form id="product_form" onSubmit={handleSubmit}>
         <ul>
           <li>
             <label>SKU</label>
