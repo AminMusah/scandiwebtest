@@ -57,9 +57,8 @@ const ProductProvider = ({ children }) => {
       if (
         sku.trim() === "" ||
         name.trim() === "" ||
-        price === "" ||
-        type.trim() === "Select Type" ||
-        attribute === []
+        price.trim() === "" ||
+        type.trim() === "Select Type" 
       ) {
         return setValidate(true);
       } else {

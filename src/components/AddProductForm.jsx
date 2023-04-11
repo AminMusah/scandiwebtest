@@ -21,7 +21,6 @@ function AddProductForm() {
     setWidth,
     length,
     setLength,
-    message,
     validate,
     skuMessage
   } = useContext(ProductContext);
